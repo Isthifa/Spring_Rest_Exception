@@ -47,7 +47,7 @@ public class PersonController {
     }
 
     @PutMapping("/update/{id}")
-    public Person update(@PathVariable long id,@RequestBody Person person)
+    public Person update(@Valid @PathVariable long id,@RequestBody Person person)
     {
         Person person1=personService.findbyid(id);
         person1.setId(person.getId());
